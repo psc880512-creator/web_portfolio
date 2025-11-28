@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vision AI Platform</title>
+
+  <!-- 메인 스타일 -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- 메인 스크립트 -->
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <!-- ===================== 헤더 ===================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- 로고 -->
+      <div class="logo">Chan's</div>
+
+      <!-- 내비게이션 -->
+      <nav class="nav">
+        <a href="#hub">About Me</a>
+        <a href="#audiences">Portfolio</a>
+        <a href="#yolo">YOLO AI</a>
+        <a href="#industries">Use cases</a>
+      </nav>
+
+      <!-- 우측 액션 버튼 영역 -->
+      <div class="header-actions">
+        <!-- <a href="#" class="btn btn-outline">Sign in</a> -->
+        <a href="#" class="btn btn-primary" id="shareBtn">share</a>
+      </div>
+
+      <!-- 모바일 햄버거 메뉴 (현재는 비활성화 상태) -->
+      <!--
+      <button class="nav-toggle" aria-label="Open menu">
+        ☰
+      </button>
+      -->
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================== Hero 섹션 (메인 인트로) ===================== -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <!-- 좌측 텍스트 영역 -->
+        <div class="hero-text">
+          <p class="hero-label">Soonchan Park’s Portfolio</p>
+          <h1>강하지만 부드러운 <br> Chan</h1>
+          <p class="hero-subtitle">
+            웹·UXUI·서비스를 설계하고 <br>AI로 제품 전략 이끄는 프로덕트 PM 리더
+          </p>
+
+          <!-- 주요 액션 버튼 -->
+          <div class="hero-actions">
+            <a href="#" class="btn btn-primary">Request a license</a>
+            <a href="#" class="btn btn-secondary">Get started on GitHub</a>
+          </div>
+
+          <!-- 신뢰 문구 -->
+          <p class="hero-note">
+            Trusted by teams in research, enterprises, and education worldwide.
+          </p>
+        </div>
+
+        <!-- 우측 메인 이미지 영역 -->
+        <div class="hero-media">
+          <div class="hero-image">
+            <!-- 프로필/작업 이미지 -->
+            <img src="./images/01_01.png" alt="Chan profile / work preview">
+          </div>
+
+          <!-- 원래 데모 카드(현재 사용 안 함) -->
+          <!--
+          <div class="hero-card">
+            <div class="hero-card-header">
+              <span class="hero-pill">Training · YOLO Model</span>
+              <span class="hero-status">Running • 87%</span>
+            </div>
+            <div class="hero-progress">
+              <div class="hero-progress-bar" style="width: 87%;"></div>
+            </div>
+            <div class="hero-metrics">
+              <div>
+                <p class="metric-label">Epoch</p>
+                <p class="metric-value">12 / 50</p>
+              </div>
+              <div>
+                <p class="metric-label">mAP</p>
+                <p class="metric-value">0.78</p>
+              </div>
+              <div>
+                <p class="metric-label">GPU usage</p>
+                <p class="metric-value">73%</p>
+              </div>
+            </div>
+            <div class="hero-mini-chart">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+            <p class="hero-card-caption">
+              Live training preview of your object detection model on HUB.
+            </p>
+          </div>
+          -->
+        </div>
+      </div> <!-- /.container.hero-inner -->
+    </section>
+
+    <!-- ===================== 스킬(기술 스택) 로고 섹션 ===================== -->
+    <section class="logos">
+      <!-- scale-section: 스크롤 시 확대/축소 효과용 클래스 -->
+      <div class="container logos-inner scale-section">
+        <p class="logos-label">제가 갖고있는 기술입니다.</p>
+
+        <!-- 스킬 뱃지 리스트 -->
+        <div class="logos-row">
+          <span class="logo-pill">
+            <img src="./images/02_00_ai.png" alt="AI" class="logo-pill-icon">
+            <span class="logo-pill-text">AI</span>
+          </span>
+
+          <span class="logo-pill">
+            <img src="./images/02_04_py.png" alt="Python" class="logo-pill-icon">
+            <span class="logo-pill-text">파이썬</span>
+          </span>
+
+          <span class="logo-pill">
+            <img src="./images/02_05_cv.png" alt="CV" class="logo-pill-icon">
+            <span class="logo-pill-text">CV</span>
+          </span>
+
+          <span class="logo-pill">
+            <img src="./images/02_06_nlp.png" alt="NLP" class="logo-pill-icon">
+            <span class="logo-pill-text">NLP</span>
+          </span>
+
+          <span class="logo-pill">
+            <img src="./images/02_01_ps.png" alt="Photoshop" class="logo-pill-icon">
+            <span class="logo-pill-text">포토샵</span>
+          </span>
+
+          <span class="logo-pill">
+            <img src="./images/02_02_ai.png" alt="Illustrator" class="logo-pill-icon">
+            <span class="logo-pill-text">일러스트</span>
+          </span>
+
+          <span class="logo-pill">
+            <img src="./images/02_03_pi.png" alt="Figma" class="logo-pill-icon">
+            <span class="logo-pill-text">피그마</span>
+          </span>
+
+          <span class="logo-pill">
+            <img src="./images/02_07_ex.png" alt="Excel" class="logo-pill-icon">
+            <span class="logo-pill-text">엑셀</span>
+          </span>
+
+          <span class="logo-pill">
+            <img src="./images/02_08_ppt.png" alt="PowerPoint" class="logo-pill-icon">
+            <span class="logo-pill-text">파워포인트</span>
+          </span>
+
+          <span class="logo-pill">
+            <img src="./images/02_09_han.png" alt="한글" class="logo-pill-icon">
+            <span class="logo-pill-text">한글</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABOUT ME / HUB 소개 섹션 ===================== -->
+    <section class="hub" id="hub">
+      <div class="container hub-inner">
+        <!-- 좌측: 자기 소개 텍스트 -->
+        <div class="hub-text">
+          <p class="section-label">ABOUT ME</p>
+          <h2 style="font-size: 38px;">DESIGN &amp; AI <br> 저를 소개 합니다.</h2>
+          <p class="section-subtitle">
+            15년 넘게 웹·UX/UI를 설계해 왔고,
+            AI 개발 지식과 PM 경험을 바탕으로 디자인과 기술을 연결하는 역할을 합니다.
+          </p>
+
+          <!-- 자기소개 포인트 1~4 -->
+          <div class="hub-steps">
+            <div class="hub-step">
+              <span class="hub-step-number">1</span>
+              <div>
+                <h2>웹·UX/UI 디자인 경력 15년 이상</h2>
+                <p>
+                  다양한 서비스와 반응형 웹 프로젝트를 경험하며,
+                  사용자 흐름과 화면 구조를 끝까지 책임져 왔습니다.
+                </p>
+              </div>
+            </div>
+
+            <div class="hub-step">
+              <span class="hub-step-number">2</span>
+              <div>
+                <h2>AI 개발 역량을 바탕으로 제품 기획·설계 경험</h2>
+                <p>
+                  Python 기반으로 AI 개발을 공부했고, NLP와 CV 워크플로우를
+                  이해하며 모델 기획·적용까지 생각할 수 있습니다.
+                </p>
+              </div>
+            </div>
+
+            <div class="hub-step">
+              <span class="hub-step-number">3</span>
+              <div>
+                <h2>디테일에 강하고 끝까지 책임지는 오너십 리더</h2>
+                <p>
+                  맡은 일에 끝까지 책임을 지고, 일정·품질·커뮤니케이션을
+                  꼼꼼하게 관리하며 팀을 이끌어 나갑니다.
+                </p>
+              </div>
+            </div>
+
+            <div class="hub-step">
+              <span class="hub-step-number">4</span>
+              <div>
+                <h2>다양한 환경에 맞춰 커스텀 AI 모델을 설계·배포한 경험</h2>
+                <p>
+                  ONNX, TensorFlow, CoreML 등 다양한 환경에 맞춰 모델을 서비스에 연동·배포한 경험
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <a href="#" class="btn btn-secondary hub-cta">Learn more</a>
+        </div>
+
+        <!-- 우측: 영상/데모 카드 자리 -->
+        <div class="hub-video">
+          <div class="video-card">
+            <div class="video-thumbnail">
+              <div class="video-badge">Demo video</div>
+              <button class="video-play" aria-label="Play video">
+                ▶
+              </button>
+            </div>
+            <p class="video-caption">
+              Watch how to train and deploy a YOLO model on HUB in just a few minutes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 포트폴리오 섹션 ===================== -->
+    <section class="audiences" id="audiences">
+      <!-- scale-section: 스크롤 시 확대/축소 효과 대상 -->
+      <div class="container audiences-inner scale-section">
+        <div class="audiences-header">
+          <p class="section-label">PORTFOLIO</p>
+          <h2>AI &amp; 디자인</h2>
+          <h1>프로젝트 포트폴리오</h1>
+          <p class="section-subtitle">
+            CV·NLP를 포함한 AI 프로젝트와 웹 디자인 작업에서<br>
+            AI, UX, 제품 관점을 융합해 수행한 대표 프로젝트들입니다.
+          </p>
+        </div>
+
+        <!-- 🔹 여기서부터 4개 포트폴리오 카드 그리드 -->
+        <div class="audience-grid">
+          <!-- 1. CV CCTV 좌석탐지 -->
+          <article
+            class="audience-card"
+            data-link="https://example.com/cv"
+            data-purpose="커피숍 좌석 회전율 분석을 위한 실시간 모니터링"
+            data-duration="4주"
+            data-members="3명"
+            data-model="YOLOv8 기반 객체 탐지 모델">
+            <div class="audience-card_img">
+              <img src="./images/03_01.jpg" alt="CV CCTV 좌석탐지 프로젝트">
+            </div>
+            <h4>(CV) Computer Vision</h4>
+            <h3>[AI] CCTV 좌석탐지</h3>
+            <p>
+              CCTV 영상을 기반으로 객체를 인식해 좌석 점유 여부를 판별하고,
+              매장 내 빈자리와 사용 현황을 실시간으로 파악할 수 있도록 설계한
+              컴퓨터 비전 프로젝트입니다.
+            </p>
+            <button type="button" class="btn btn-primary audience-btn">
+              상세 보기
+            </button>
+          </article>
+
+          <!-- 2. NLP 음식 추천 -->
+          <article
+            class="audience-card"
+            data-link="https://example.com/nlp"
+            data-purpose="사용자 재료·취향 기반 맞춤 레시피 추천"
+            data-duration="4주"
+            data-members="4명"
+            data-model="LLM 기반 대화형 추천 + Graph RAG">
+            <div class="audience-card_img">
+              <img src="./images/03_02.jpg" alt="NLP 레시피 추천 프로젝트">
+            </div>
+            <h4>(NLP) Natural Language Processing</h4>
+            <h3>[AI] 음식 추천</h3>
+            <p>
+              사용자가 대화형 프롬프트로 집에 있는 재료와 취향을 입력하면,
+              어울리는 메뉴를 추천하고 단계별 레시피까지 안내해 주는
+              자연어 기반 레시피 추천 어플리케이션입니다.
+            </p>
+            <button type="button" class="btn btn-primary audience-btn">
+              상세 보기
+            </button>
+          </article>
+
+          <!-- 3. 기타 AI 실험/스터디 -->
+          <article
+            class="audience-card"
+            data-link="https://example.com/ai-etc"
+            data-purpose="AI 실험·스터디 기록을 통합 관리"
+            data-duration="지속 진행"
+            data-members="개인 및 소규모 팀"
+            data-model="다양한 ML/DL 모델 실험">
+            <div class="audience-card_img">
+              <img src="./images/03_04.jpg" alt="기타 AI 실험 및 스터디">
+            </div>
+            <h4>studies</h4>
+            <h3>Other AI experiments</h3>
+            <p>
+              AI 모델 실험, 프로토타입, 스터디 정리 등
+              컴퓨터 비전·NLP·툴 개발 관련 작업물과 기록들을 한 곳에 모아
+              학습과 시도를 이어가고 있습니다.
+            </p>
+            <button type="button" class="btn btn-primary audience-btn">
+              상세 보기
+            </button>
+          </article>
+
+          <!-- 4. 웹디자인 포트폴리오 -->
+          <article
+            class="audience-card"
+            data-link="https://example.com/web"
+            data-purpose="서비스 가치가 잘 보이도록 구조·비주얼 설계"
+            data-duration="개별 프로젝트별 상이"
+            data-members="개인 / 협업"
+            data-model="Figma, Photoshop, Illustrator">
+            <div class="audience-card_img">
+              <img src="./images/03_03.jpg" alt="Web &amp; visual design portfolio">
+            </div>
+            <h4>design portfolio</h4>
+            <h3>[Web] &amp; visual</h3>
+            <p>
+              서비스 메인 페이지, 랜딩 페이지, 쇼핑몰 배너, 상품 상세페이지 등
+              다양한 웹·모바일 화면과 그래픽 이미지를 설계·제작한
+              웹디자인 포트폴리오 작업들입니다.
+            </p>
+            <button type="button" class="btn btn-primary audience-btn">
+              상세 보기
+            </button>
+          </article>
+        </div>
+        <!-- 🔹 /.audience-grid 끝 -->
+      </div>
+    </section>
+
+
+    <!-- ===================== 포트폴리오 모달 ===================== -->
+    <div class="portfolio-modal-overlay" id="portfolioModal" aria-hidden="true">
+      <div class="portfolio-modal">
+        <!-- 닫기 버튼 -->
+        <button class="portfolio-modal-close" aria-label="닫기">×</button>
+
+        <div class="portfolio-modal-inner">
+          <!-- 좌측: 큰 이미지 -->
+          <div class="portfolio-modal-image">
+            <img src="" alt="" id="modalImage">
+          </div>
+
+          <!-- 우측: 텍스트 + 상세 정보 -->
+          <div class="portfolio-modal-text">
+            <p class="portfolio-modal-tag" id="modalTag"></p>
+            <h3 class="portfolio-modal-title" id="modalTitle"></h3>
+            <p class="portfolio-modal-desc" id="modalDesc"></p>
+
+            <!-- 프로젝트 메타 정보 박스 -->
+            <ul class="portfolio-modal-meta">
+              <li>
+                <span class="meta-label">기획의도</span>
+                <span class="meta-value" id="modalPurpose"></span>
+              </li>
+              <li>
+                <span class="meta-label">소요시간</span>
+                <span class="meta-value" id="modalDuration"></span>
+              </li>
+              <li>
+                <span class="meta-label">인원</span>
+                <span class="meta-value" id="modalMembers"></span>
+              </li>
+              <li>
+                <span class="meta-label">사용한 모델</span>
+                <span class="meta-value" id="modalModel"></span>
+              </li>
+            </ul>
+
+            <!-- 모달 푸터: 외부 링크 버튼 -->
+            <div class="portfolio-modal-footer">
+              <a href="#"
+                 class="btn btn-primary portfolio-modal-link"
+                 id="modalLink"
+                 target="_blank"
+                 rel="noopener">
+                링크
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== 3단계 Steps 섹션 ===================== -->
+    <section class="steps" id="content-block-3">
+      <div class="container">
+        <div class="steps-header">
+          <p class="section-label">HOW IT WORKS</p>
+          <h2>Boost your business or research in 3 simple steps</h2>
+          <p class="section-subtitle">
+            Upload your images, configure your YOLO model, and deploy it to the real world —
+            all within a single, intuitive interface.
+          </p>
+        </div>
+
+        <!-- 상단 탭 -->
+        <div class="steps-tabs" role="tablist">
+          <button class="steps-tab active" data-step="1" role="tab">
+            <span class="steps-tab-number">01</span>
+            Drag &amp; drop
+          </button>
+          <button class="steps-tab" data-step="2" role="tab">
+            <span class="steps-tab-number">02</span>
+            Select
+          </button>
+          <button class="steps-tab" data-step="3" role="tab">
+            <span class="steps-tab-number">03</span>
+            Deploy
+          </button>
+        </div>
+
+        <!-- 내용 영역 -->
+        <div class="steps-body">
+          <!-- 좌측 설명 텍스트 -->
+          <div class="steps-text">
+            <p class="steps-count">01</p>
+            <h3 class="steps-title">Drag and drop your dataset directly from your device</h3>
+            <p class="steps-description">
+              Zip up your images and upload the dataset to HUB. We automatically validate
+              your labels and prepare everything for training.
+            </p>
+            <ul class="steps-list">
+              <li>Support for detection, segmentation, and classification tasks</li>
+              <li>Automatic dataset checks and quick statistics</li>
+              <li>No scripts needed — just upload and go</li>
+            </ul>
+          </div>
+
+          <!-- 우측 드롭존 카드 -->
+          <div class="steps-visual">
+            <div class="steps-dropzone">
+              <p class="dropzone-label">Upload dataset</p>
+              <div class="dropzone-area">
+                <span class="dropzone-icon">⬆</span>
+                <p>Drop your <strong>.zip</strong> file here</p>
+                <p class="dropzone-hint">or click to browse</p>
+              </div>
+              <p class="dropzone-footer">
+                Example: <code>virus_detection_dataset.zip</code>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== YOLO 기능 섹션 ===================== -->
+    <section class="yolo" id="yolo">
+      <div class="container yolo-inner">
+        <div class="yolo-header">
+          <p class="section-label">YOLO POWERED</p>
+          <h2>Powered by state-of-the-art Ultralytics YOLO</h2>
+          <p class="section-subtitle">
+            Ultralytics YOLO is the engine behind HUB — a family of high-performing models
+            for real-time computer vision tasks.
+          </p>
+        </div>
+
+        <!-- YOLO 기능 카드 3개 -->
+        <div class="yolo-grid">
+          <article class="yolo-card">
+            <h3>Image classification</h3>
+            <p>
+              Classify images into sets using pre-trained or custom YOLO classifiers.
+            </p>
+          </article>
+          <article class="yolo-card">
+            <h3>Object detection</h3>
+            <p>
+              Detect the location and class of objects, even in crowded or complex scenes.
+            </p>
+          </article>
+          <article class="yolo-card">
+            <h3>Instance segmentation</h3>
+            <p>
+              Segment individual objects from the rest of the image with pixel-level precision.
+            </p>
+          </article>
+        </div>
+
+        <!-- 통계 숫자 -->
+        <div class="yolo-stats">
+          <div class="yolo-stat">
+            <p class="yolo-stat-number">2.3B+</p>
+            <p class="yolo-stat-label">images analyzed per day</p>
+          </div>
+          <div class="yolo-stat">
+            <p class="yolo-stat-number">5M</p>
+            <p class="yolo-stat-label">visits per month</p>
+          </div>
+          <div class="yolo-stat">
+            <p class="yolo-stat-number">119K+</p>
+            <p class="yolo-stat-label">GitHub stars</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA 1 섹션 ===================== -->
+    <section class="cta-primary">
+      <!-- scale-section: 스크롤 확대 효과 대상 -->
+      <div class="container cta-primary-inner scale-section">
+        <div>
+          <p class="section-label">GET STARTED</p>
+          <h2>Let’s build the future of AI together</h2>
+          <p class="section-subtitle">
+            Start exploring with our no-code platform, or go deeper with the open-source Ultralytics YOLO models.
+          </p>
+        </div>
+        <div class="cta-buttons">
+          <a href="#" class="btn btn-primary">Start for free</a>
+          <a href="#" class="btn btn-secondary">Explore docs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 산업별 섹션 ===================== -->
+    <section class="industries" id="industries">
+      <div class="container industries-inner">
+        <div class="industries-header">
+          <p class="section-label">INDUSTRY USE CASES</p>
+          <h2>We help innovators apply computer vision</h2>
+          <p class="section-subtitle">
+            From manufacturing to healthcare, companies use YOLO to automate inspections,
+            detect anomalies, and improve safety.
+          </p>
+        </div>
+
+        <!-- 4개 인더스트리 카드 -->
+        <div class="industries-grid">
+          <article class="industry-card">
+            <h3>Manufacturing</h3>
+            <p>
+              Use AI for complete quality control — detect defects, verify assembly, and
+              monitor production lines in real time.
+            </p>
+          </article>
+          <article class="industry-card">
+            <h3>Healthcare</h3>
+            <p>
+              Leverage AI to assist in medical imaging, triage, and safety monitoring
+              while keeping people at the center.
+            </p>
+          </article>
+          <article class="industry-card">
+            <h3>Agriculture</h3>
+            <p>
+              Protect crops and livestock with smart monitoring, yield estimation, and pest detection.
+            </p>
+          </article>
+          <article class="industry-card">
+            <h3>Automotive</h3>
+            <p>
+              Transform the future of driving with object detection for ADAS, traffic analytics, and more.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CTA 2 섹션 ===================== -->
+    <section class="cta-secondary">
+      <!-- 이 div에 scale-section 추가: 스크롤 시 커졌다 작아지는 효과 -->
+      <div class="container cta-secondary-inner scale-section">
+        <div class="cta-secondary-text">
+          <p class="section-label">NO-CODE PIPELINE</p>
+          <h2>Build your AI model now</h2>
+          <p class="section-subtitle">
+            Visualize, train, and deploy AI models effortlessly with our no-code platform.
+          </p>
+        </div>
+
+        <div class="cta-secondary-steps">
+          <div class="cta-step">
+            <span class="cta-step-number">1</span>
+            <p>Upload image datasets</p>
+          </div>
+          <div class="cta-step">
+            <span class="cta-step-number">2</span>
+            <p>Choose models to train or create yours</p>
+          </div>
+          <div class="cta-step">
+            <span class="cta-step-number">3</span>
+            <p>Deploy to the real world</p>
+          </div>
+        </div>
+
+        <a href="#" class="btn btn-primary cta-secondary-btn">Start a free plan</a>
+      </div>
+    </section>
+
+    <!-- ===================== 뉴스레터 섹션 ===================== -->
+    <section class="newsletter">
+      <div class="container newsletter-inner">
+        <div class="newsletter-text">
+          <p class="section-label">STAY AHEAD</p>
+          <h2>Stay ahead of the game</h2>
+          <p class="section-subtitle">
+            Get the latest news and insights on AI and machine learning delivered to your inbox once a month.
+          </p>
+        </div>
+
+        <!-- 뉴스레터 폼 -->
+        <form class="newsletter-form">
+          <div class="newsletter-fields">
+            <input type="email" class="newsletter-input" placeholder="Enter your email" required />
+            <button type="submit" class="btn btn-primary newsletter-btn">
+              Subscribe
+            </button>
+          </div>
+          <p class="newsletter-message" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===================== 푸터 ===================== -->
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-left">
+          <p class="footer-logo">VisionAI</p>
+          <p class="footer-copy">© 2025 VisionAI Inc. All rights reserved.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-column">
+            <h4>Products</h4>
+            <a href="#hub">Vision AI HUB</a>
+            <a href="#yolo">YOLO models</a>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <a href="#">Docs</a>
+            <a href="#">Blog</a>
+            <a href="#">Community</a>
+          </div>
+          <div class="footer-column">
+            <h4>Company</h4>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Careers</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
+</body>
+
+</html>
