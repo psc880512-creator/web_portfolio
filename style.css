@@ -422,7 +422,7 @@ body {
 
 /* ===================== HUB 섹션 (About Me) ===================== */
 .hub {
-    padding: 40px 0 60px;
+    padding: 100px 0 100px;
     background-color: rgba(255, 255, 255, 0.06);
 }
 
@@ -550,7 +550,7 @@ body {
 
 /* ===================== CTA 1 ===================== */
 .cta-primary {
-    padding: 40px 0 45px;
+    padding: 2px 0 2px;
 }
 
 .cta-primary-inner {
@@ -562,7 +562,7 @@ body {
     justify-content: center;
     /* 세로 가운데 */
     gap: 24px;
-    padding: 32px 24px;
+    padding: 72px 24px 24px 24px;
     border-radius: var(--radius-xl);
     background: linear-gradient(135deg, #5245b3, #0088ff);
     color: #fff;
@@ -622,7 +622,7 @@ body {
 
 /* 굵은 제목 */
 .career-title {
-    font-size: 28px;
+    font-size: 21px;
     font-weight: 700;
     margin: 0 0 2px;
     /* 굵게 */
@@ -630,7 +630,7 @@ body {
 }
 
 .career-title_02 {
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 500;
     opacity: 0.9;
     margin: 0 0 8px;
@@ -644,6 +644,23 @@ body {
     font-size: 17px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* "15년 디자인 & AI 경험 요약" 타이틀 */
+.cta-primary-title {
+    margin: 8px 0 16px;
+    font-size: 45px;
+    /* 여기 숫자만 바꿔서 크기 조정 */
+    line-height: 1.3;
+}
+
+/* CAREER 섹션 설명문 */
+.cta-primary-subtitle {
+    margin-bottom: 40px;
+    /* 타이틀과 카드 사이 간격 */
+    font-size: 16px;
+    /* 필요하면 여기서도 크기 조정 */
 }
 
 /* ---- 반응형: 태블릿 / 모바일 ---- */
@@ -678,6 +695,50 @@ body {
     margin-top: 2px;
     /* 줄 간격 살짝 띄우기 */
 }
+
+/* ===================== CAREER 섹션 – 아래 1칸 이미지 카드 ===================== */
+.career-image-cell {
+    grid-column: 1 / -1;
+    /* 4칸 전체 폭 사용 */
+    margin-top: 20px;
+
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(5, 12, 40, 0.45);
+    padding: 18px;
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
+
+    /* 카드 안 내용 중앙 정렬 */
+    display: flex;
+    align-items: center;
+    /* 세로 중앙 */
+    justify-content: center;
+    /* 가로 중앙 */
+}
+
+.career-image-cell img {
+    max-width: 100%;
+    max-height: 220px;
+    /* 필요하면 180~260 등으로 조절 */
+    object-fit: contain;
+    display: block;
+}
+
+
+/* ===================== 모바일에서 CAREER 섹션 떨림 방지 ===================== */
+@media (max-width: 768px) {
+
+    /* #career 안의 scale-section 효과 끄기 */
+    #career .cta-primary-inner.scale-section {
+        transform: none !important;
+        /* 확대/축소 제거 */
+        opacity: 1 !important;
+        /* 투명도 변경 제거 */
+        transition: none !important;
+        /* 애니메이션 제거 */
+    }
+}
+
 
 
 /* ===================== Audience 섹션 (포트폴리오 카드) ===================== */
@@ -1204,9 +1265,9 @@ body {
 
 .photo-section-header h2 {
     margin: 6px 0 6px;
-    font-size: 26px;
+    font-size: 45px;
     font-weight: 700;
-    color: #111827;
+    color: #ffffff;
 }
 
 /* 이 섹션 안에서는 서브타이틀만 조금 다르게 */

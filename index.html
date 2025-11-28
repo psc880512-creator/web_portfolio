@@ -22,9 +22,10 @@
       <!-- 내비게이션 -->
       <nav class="nav">
         <a href="#hub">About Me</a>
+        <a href="#career">CAREER</a>
         <a href="#audiences">Portfolio</a>
-        <a href="#yolo">YOLO AI</a>
-        <a href="#industries">Use cases</a>
+
+        <a href="#photo-section">photo-section</a>
       </nav>
 
       <!-- 우측 액션 버튼 영역 -->
@@ -114,7 +115,7 @@
     </section>
 
     <!-- ===================== 스킬(기술 스택) 로고 섹션 ===================== -->
-    <section class="logos">
+    <section class="logos" id="logos">
       <!-- scale-section: 스크롤 시 확대/축소 효과용 클래스 -->
       <div class="container logos-inner scale-section">
         <p class="logos-label">제가 갖고있는 기술입니다.</p>
@@ -261,8 +262,10 @@
           <!-- 전체 내용을 감싸는 래퍼 -->
           <div class="cta-primary-content">
             <p class="section-label">CAREER</p>
-            <h2 style="font-size: 45px;">15년 디자인 &<br> AI 경험 요약</h2>
-            <p class="section-subtitle">
+            <h2 class="cta-primary-title">
+              15년 디자인 &<br> AI 경험 요약
+            </h2>
+            <p class="section-subtitle cta-primary-subtitle">
               웹·UX/UI 디자인과 AI 프로젝트 경험을 바탕으로<br>
               서비스 기획부터 화면 설계, 프로덕트 운영까지 책임졌습니다.
             </p>
@@ -273,8 +276,8 @@
                 <p class="career-title">학력사항</p>
                 <p class="career-title_02">~2010</p>
                 <ul class="career-list">
-                  <li>대광고등학교(신설동) 졸업</li>
-                  <li>안양 수도군단</li>
+                  <li>대광고등학교 졸업</li>
+                  <li>안양 수도군단 [육군병장]</li>
                   <li>종로 더좋은 컴퓨터학원</li>
                 </ul>
               </div>
@@ -309,6 +312,10 @@
                   <li>정보처리 기능사</li>
                 </ul>
               </div>
+              <!-- ✅ 아래 4칸 전체폭을 쓰는 1칸짜리 이미지 박스 -->
+              <div class="career-image-cell">
+                <img src="./images/03_01.png" alt="커리어 대표 이미지">
+              </div>
             </div>
             <!-- 🔹 4칸 경력 그리드 끝 -->
           </div>
@@ -333,13 +340,8 @@
         <!-- 🔹 여기서부터 4개 포트폴리오 카드 그리드 -->
         <div class="audience-grid">
           <!-- 1. CV CCTV 좌석탐지 -->
-          <article
-            class="audience-card"
-            data-link="https://example.com/cv"
-            data-purpose="커피숍 좌석 회전율 분석을 위한 실시간 모니터링"
-            data-duration="4주"
-            data-members="3명"
-            data-model="YOLOv8 기반 객체 탐지 모델">
+          <article class="audience-card" data-link="https://example.com/cv" data-purpose="커피숍 좌석 회전율 분석을 위한 실시간 모니터링"
+            data-duration="4주" data-members="3명" data-model="YOLOv8 기반 객체 탐지 모델">
             <div class="audience-card_img">
               <img src="./images/03_01.jpg" alt="CV CCTV 좌석탐지 프로젝트">
             </div>
@@ -356,13 +358,8 @@
           </article>
 
           <!-- 2. NLP 음식 추천 -->
-          <article
-            class="audience-card"
-            data-link="https://example.com/nlp"
-            data-purpose="사용자 재료·취향 기반 맞춤 레시피 추천"
-            data-duration="4주"
-            data-members="4명"
-            data-model="LLM 기반 대화형 추천 + Graph RAG">
+          <article class="audience-card" data-link="https://example.com/nlp" data-purpose="사용자 재료·취향 기반 맞춤 레시피 추천"
+            data-duration="4주" data-members="4명" data-model="LLM 기반 대화형 추천 + Graph RAG">
             <div class="audience-card_img">
               <img src="./images/03_02.jpg" alt="NLP 레시피 추천 프로젝트">
             </div>
@@ -379,13 +376,8 @@
           </article>
 
           <!-- 3. 기타 AI 실험/스터디 -->
-          <article
-            class="audience-card"
-            data-link="https://example.com/ai-etc"
-            data-purpose="AI 실험·스터디 기록을 통합 관리"
-            data-duration="지속 진행"
-            data-members="개인 및 소규모 팀"
-            data-model="다양한 ML/DL 모델 실험">
+          <article class="audience-card" data-link="https://example.com/ai-etc" data-purpose="AI 실험·스터디 기록을 통합 관리"
+            data-duration="지속 진행" data-members="개인 및 소규모 팀" data-model="다양한 ML/DL 모델 실험">
             <div class="audience-card_img">
               <img src="./images/03_04.jpg" alt="기타 AI 실험 및 스터디">
             </div>
@@ -402,13 +394,8 @@
           </article>
 
           <!-- 4. 웹디자인 포트폴리오 -->
-          <article
-            class="audience-card"
-            data-link="https://example.com/web"
-            data-purpose="서비스 가치가 잘 보이도록 구조·비주얼 설계"
-            data-duration="개별 프로젝트별 상이"
-            data-members="개인 / 협업"
-            data-model="Figma, Photoshop, Illustrator">
+          <article class="audience-card" data-link="https://example.com/web" data-purpose="서비스 가치가 잘 보이도록 구조·비주얼 설계"
+            data-duration="개별 프로젝트별 상이" data-members="개인 / 협업" data-model="Figma, Photoshop, Illustrator">
             <div class="audience-card_img">
               <img src="./images/03_03.jpg" alt="Web &amp; visual design portfolio">
             </div>
@@ -468,11 +455,7 @@
 
             <!-- 모달 푸터: 외부 링크 버튼 -->
             <div class="portfolio-modal-footer">
-              <a href="#"
-                 class="btn btn-primary portfolio-modal-link"
-                 id="modalLink"
-                 target="_blank"
-                 rel="noopener">
+              <a href="#" class="btn btn-primary portfolio-modal-link" id="modalLink" target="_blank" rel="noopener">
                 링크
               </a>
             </div>
@@ -482,11 +465,11 @@
     </div>
 
     <!-- ===================== PHOTO 섹션 (montbest 스타일) ===================== -->
-    <section class="photo-section">
+    <section class="photo-section" id="photo-section">
       <div class="container photo-section-inner scale-section">
         <div class="photo-section-header">
           <p class="section-label">PHOTO GRAPHY</p>
-          <h2>브랜드와 서비스의 무드를 담은 비주얼 작업</h2>
+          <h2>브랜드와 서비스의 무드를<br> 담은 비주얼 작업</h2>
           <p class="section-subtitle">
             랜딩, 상세페이지, 캠페인 등에 사용했던 대표 시각 자료들입니다.<br>
             썸네일을 클릭하면 실제 페이지 혹은 관련 링크로 이동합니다.
@@ -495,9 +478,8 @@
 
         <!-- 위에 긴 사진 : 위→아래 -->
         <div class="photo-main-wrapper">
-          <a href="https://example.com/photo-main"
-             class="photo-main photo-anim photo-from-top"
-             target="_blank" rel="noopener">
+          <a href="https://example.com/photo-main" class="photo-main photo-anim photo-from-top" target="_blank"
+            rel="noopener">
             <img src="./images/04_01.jpg" alt="메인 사진">
           </a>
         </div>
@@ -505,23 +487,20 @@
         <!-- 아래 작은 사진 3장 -->
         <div class="photo-sub-wrapper">
           <!-- 왼쪽 : 왼쪽→오른쪽 -->
-          <a href="https://example.com/photo-left"
-             class="photo-sub photo-sub-left photo-anim photo-from-left"
-             target="_blank" rel="noopener">
+          <a href="https://example.com/photo-left" class="photo-sub photo-sub-left photo-anim photo-from-left"
+            target="_blank" rel="noopener">
             <img src="./images/04_02.jpg" alt="서브 사진 1">
           </a>
 
           <!-- 가운데 : 아래→위 -->
-          <a href="https://example.com/photo-center"
-             class="photo-sub photo-sub-center photo-anim photo-from-bottom"
-             target="_blank" rel="noopener">
+          <a href="https://example.com/photo-center" class="photo-sub photo-sub-center photo-anim photo-from-bottom"
+            target="_blank" rel="noopener">
             <img src="./images/04_03.jpg" alt="서브 사진 2">
           </a>
 
           <!-- 오른쪽 : 오른쪽→왼쪽 -->
-          <a href="https://example.com/photo-right"
-             class="photo-sub photo-sub-right photo-anim photo-from-right"
-             target="_blank" rel="noopener">
+          <a href="https://example.com/photo-right" class="photo-sub photo-sub-right photo-anim photo-from-right"
+            target="_blank" rel="noopener">
             <img src="./images/04_04.jpg" alt="서브 사진 3">
           </a>
         </div>
