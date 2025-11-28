@@ -352,25 +352,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    /* ===================== PHOTO 섹션 이미지 애니메이션 ===================== */
-    const photoItems = document.querySelectorAll(".photo-anim");
+/* ===================== PHOTO 섹션 이미지 애니메이션 ===================== */
+const photoItems = document.querySelectorAll(".photo-anim");
 
-    if (photoItems.length > 0) {
-        const photoObserver = new IntersectionObserver(
-            (entries, observer) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        // 화면에 들어온 요소에 is-visible 클래스 추가
-                        entry.target.classList.add("is-visible");
-                        // 한 번 애니메이션 한 뒤에는 관찰 중지
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            {
-                threshold: 0.3, // 30% 정도 보이면 발동
-            }
-        );
+if (photoItems.length > 0) {
+    const photoObserver = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // 화면에 들어온 요소에 is-visible 클래스 추가
+                    entry.target.classList.add("is-visible");
+                    // 한 번 애니메이션 한 뒤에는 관찰 중지
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        {
+            threshold: 0.3, // 30% 정도 보이면 발동
+        }
+    );
 
-        photoItems.forEach((el) => photoObserver.observe(el));
-    }
+    photoItems.forEach((el) => photoObserver.observe(el));
+}
