@@ -724,6 +724,32 @@ body {
     display: block;
 }
 
+/* 🔹 아래 4칸 전체 폭을 쓰는 타임라인 이미지 박스 */
+.career-image-cell {
+    grid-column: 1 / -1;
+    /* 4칸 전체 폭 사용 */
+    margin-top: 24px;
+    padding: 16px 14px 18px;
+    border-radius: 24px;
+    background: rgba(8, 12, 32, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    display: flex;
+    justify-content: center;
+    /* 안의 내용 가로 중앙정렬 */
+    align-items: center;
+    /* 안의 내용 세로 중앙정렬 */
+}
+
+/* picture / img 공통 – 박스 안에서 가운데 + 반응형 너비 */
+.career-image-cell picture,
+.career-image-cell .career-image {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
 
 /* ===================== 모바일에서 CAREER 섹션 떨림 방지 ===================== */
 @media (max-width: 768px) {
