@@ -186,6 +186,30 @@ body {
     cursor: pointer;
 }
 
+/* 🔹 헤더 오른쪽 블로그 로고 버튼 */
+.blog-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1px;     /* share 버튼과 간격만 유지 */
+    background: none;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+}
+
+.blog-link img {
+    display: block;
+    height: 40px;          /* 로고 높이만 조절해서 크기 맞추기 */
+    width: auto;
+}
+
+/* hover 시 살짝만 강조하고 싶으면 (옵션) */
+.blog-link:hover img {
+    opacity: 0.85;
+}
+
+
 /* ===================== Hero ===================== */
 .hero {
     padding: 40px 0 40px;
