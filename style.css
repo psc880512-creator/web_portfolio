@@ -1169,7 +1169,9 @@ body {
     }
 
     .header-actions {
-        display: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
     }
 
     .nav-toggle {
