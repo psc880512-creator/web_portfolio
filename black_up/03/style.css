@@ -792,6 +792,7 @@ body {
 }
 
 
+
 /* ===================== Audience 섹션 (포트폴리오 카드) ===================== */
 .audiences {
     padding: 60px 0 100px;
@@ -821,34 +822,38 @@ body {
     margin-bottom: 32px;
 }
 
-/* 🔹 카드 그리드
-   - PC(>1024px): 2열 (2×2)
-   - 태블릿/모바일(<=1024px): 1열 */
+/* 카드 그리드: 데스크톱 4열 */
 .audience-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    /* PC: 2열 */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 24px;
 }
 
-/* 1024px 이하에서는 1열로만 */
+/* 태블릿: 2열 */
 @media (max-width: 1024px) {
+    .audience-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* 모바일: 1열 */
+@media (max-width: 640px) {
     .audience-grid {
         grid-template-columns: 1fr;
     }
 }
 
-/* 🔹 카드 하나 (PC/모바일/탭 공통 – 내부 레이아웃 동일) */
+/* 카드 기본 */
 .audience-card {
-    display: flex;
-    /* 항상 가로 배치 */
-    align-items: center;
-    padding: 22px 26px;
+    padding: 18px 16px 20px;
     border-radius: 24px;
     background: rgba(8, 12, 32, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.06);
-    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
+    transform: translateY(0) scale(1);
+    transform-origin: center center;
     transition:
         transform 0.2s ease-out,
         box-shadow 0.2s ease-out,
@@ -856,138 +861,57 @@ body {
         background 0.2s ease-out;
 }
 
-/* Hover 효과 (PC에서만 체감, 모바일은 그냥 유지) */
+/* Hover 효과 */
 .audience-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.7);
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
     border-color: rgba(129, 140, 248, 0.7);
     background: rgba(15, 23, 42, 0.98);
+    z-index: 2;
 }
 
-/* 🔹 왼쪽 정사각형 이미지 – 모든 해상도에서 정사각형 유지 */
+/* 카드 이미지 */
 .audience-card_img {
-    flex: 0 0 170px;
-    /* 가로 170px 고정 */
-    height: 170px;
-    /* 세로도 170px → 정사각형 */
-    border-radius: 20px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 18px;
     overflow: hidden;
-    margin-right: 20px;
+    margin-bottom: 14px;
 }
 
 .audience-card_img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* 정사각형 박스 안에서 잘라서 채우기 */
     display: block;
 }
 
-/* 🔹 가운데 텍스트 영역 */
-.audience-card_body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-/* 텍스트 스타일 */
-.audience-card_body h4 {
+/* 카드 텍스트 */
+.audience-card h4 {
     font-size: 12px;
     color: #a5b4fc;
-    margin: 0;
+    margin: 0 0 4px;
 }
 
-.audience-card_body h3 {
+.audience-card h3 {
     font-size: 18px;
-    margin: 2px 0 4px;
+    margin: 0 0 8px;
 }
 
-.audience-card_body p {
+.audience-card p {
     margin: 0;
     font-size: 13px;
     line-height: 1.6;
     color: var(--text-muted);
 }
 
-/* 🔹 오른쪽 버튼 (텍스트 오른쪽 끝에 위치) */
+/* 카드 안의 "상세 보기" 버튼 – 위치만, 클릭은 article */
 .audience-card .audience-btn {
-    margin-left: 20px;
-    align-self: center;
+    margin-top: auto;
+    align-self: flex-start;
     pointer-events: none;
-    /* 카드 전체를 클릭 영역으로 쓸 예정이라면 유지 */
-    white-space: nowrap;
+    margin-bottom: 10px;
 }
-
-/* ===================== 화면이 좁을 때 약간만 축소 ===================== */
-@media (max-width: 768px) {
-    .audience-card {
-        padding: 18px 16px;
-    }
-
-    .audience-card_img {
-        flex: 0 0 140px;
-        /* 작은 화면에서는 이미지 조금 줄이기 */
-        height: 140px;
-        margin-right: 14px;
-    }
-
-    .audience-card_body h3 {
-        font-size: 17px;
-    }
-
-    .audience-card_body p {
-        font-size: 12px;
-    }
-}
-
-
-
-
-
-/* ===================== 반응형 – 태블릿 ===================== */
-@media (max-width: 1024px) {
-    .audience-card {
-        padding: 20px 20px;
-    }
-
-    .audience-card_img {
-        flex: 0 0 150px;
-        height: 150px;
-        margin-right: 18px;
-    }
-
-    .audience-card_body h3 {
-        font-size: 17px;
-    }
-}
-
-/* ===================== 반응형 – 모바일 ===================== */
-@media (max-width: 720px) {
-    .audience-card {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 18px 16px;
-    }
-
-    .audience-card_img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 4 / 3;
-        margin-right: 0;
-        margin-bottom: 12px;
-    }
-
-    .audience-card .audience-btn {
-        margin-left: 0;
-        margin-top: 12px;
-        align-self: flex-start;
-    }
-}
-
-
-
-
 
 /* ===================== 포트폴리오 모달 ===================== */
 .portfolio-modal-overlay {
