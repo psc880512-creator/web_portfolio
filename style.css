@@ -1169,9 +1169,7 @@ body {
     }
 
     .header-actions {
-        display: flex;
-        align-items: center;
-        gap: 6px;
+        display: none;
     }
 
     .nav-toggle {
@@ -1221,6 +1219,16 @@ body {
     .footer-inner {
         flex-direction: column;
         align-items: flex-start;
+    }
+}
+
+/* 🔁 모바일에서 header-actions 다시 보이게 덮어쓰기 */
+@media (max-width: 720px) {
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        position: static;  /* 필요하면 절대 위치 제거 */
     }
 }
 
