@@ -310,7 +310,7 @@
               <h3>[Web] & visual</h3>
               <p>웹 디자인 / 상세페이지 / 브랜딩 이미지</p>
             </div>
-            <button class="btn btn-primary audience-btn">상세 보기</button>
+            <button class="btn btn-primary audience-btn" id="openPortfolioBtn">상세 보기</button>
           </article>
 
         </div>
@@ -321,7 +321,7 @@
     <div class="portfolio-modal-overlay" id="portfolioModal">
       <div class="portfolio-modal">
 
-        <button class="portfolio-modal-close">×</button>
+        <button class="portfolio-modal-close" id="closePortfolioModal">×</button>
 
         <div class="portfolio-modal-inner">
           <div class="portfolio-modal-image">
@@ -342,13 +342,14 @@
 
             <div class="portfolio-modal-footer">
               <button class="btn btn-primary" id="viewPortfolioBtn">
-                포트폴리오 보기
+                포트폴리오 보기 (PDF)
               </button>
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <!-- ===================== PDF 모달 ===================== -->
     <div class="pdf-modal-overlay" id="pdfModal">
       <div class="pdf-modal">
@@ -359,7 +360,6 @@
           <h3 id="pdfTitle">포트폴리오 PDF</h3>
         </div>
 
-        <!-- PDF 뷰어 -->
         <iframe id="pdfViewer" src="" frameborder="0"></iframe>
 
       </div>
