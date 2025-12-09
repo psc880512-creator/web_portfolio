@@ -346,8 +346,9 @@ img {
 }
 
 .hub-steps {
-    width: 900px;
-    margin: 18px auto 0; 
+    width: 100%;
+    max-width: 900px;   /* PC에서는 900px로 보여줌 */
+    margin: 18px auto 0;
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -1264,6 +1265,86 @@ img {
         width: 100%;
         max-width: 260px;
     }
+    .scale-section {
+        transform: scale(1) !important;
+        opacity: 1 !important;
+    }
+}
+
+    .social-icon {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+
+    .social-icon img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transition: opacity .3s ease;
+    }
+
+    /* 기본 회색 아이콘 */
+    .icon-gray { opacity: 1; }
+
+    /* hover에서 나타날 흰색 아이콘 */
+    .icon-white { opacity: 0; }
+
+    /* hover 시 공통 확대 */
+    .social-icon:hover {
+        transform: scale(1.15);
+    }
+
+    /* 회색 → 숨김 */
+    .social-icon:hover .icon-gray {
+        opacity: 0;
+    }
+    /* 흰색 아이콘 표시 */
+    .social-icon:hover .icon-white {
+        opacity: 1;
+    }
+
+    /* ==========================
+    INSTAGRAM : 핑크 → 파랑 Glow
+    ========================== */
+    .insta-icon:hover {
+        filter: drop-shadow(0 0 8px #ff2da0) 
+                drop-shadow(0 0 14px #4bb8ff);
+        /* 부드러운 그라데이션 느낌 */
+    }
+
+    /* ==========================
+    BLOG : 초록색 Glow
+    ========================== */
+    .blog-icon:hover {
+        filter: drop-shadow(0 0 8px #00ff8d)
+                drop-shadow(0 0 14px #00c46b);
+    }
+
+@media (max-width: 600px) {
+    .hero-label {
+        font-size: 13px;
+        padding: 3px 16px;
+    }
+
+    .hero h1 {
+        font-size: clamp(24px, 7vw, 42px);
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    .hero-image {
+        max-width: 100%;
+        aspect-ratio: auto;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1286,6 +1367,65 @@ img {
     }
 }
 
+@media (min-width: 600px) {
+    .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start !important; /* space-between 제거 */
+        gap: 32px;
+    }
+
+    /* PC에서는 로고는 왼쪽 고정 */
+    .logo {
+        display: inline-block !important;
+        margin-right: auto !important;
+    }
+
+    /* nav와 아이콘은 로고 오른쪽에 자동 배치 */
+    .nav {
+        margin-left: 0 !important;
+    }
+
+    .header-actions {
+        margin-left: 20px !important;
+    }
+}
 
 
+/* ===================== 모바일 전용 레이아웃 ===================== */
+@media (max-width: 600px) {
 
+    /* 전체 헤더를 세로정렬로 바꿈 */
+    .header-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    /* 첫 번째 줄: 로고 왼쪽 / 아이콘 오른쪽 */
+    .logo {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* 아이콘들을 오른쪽 끝으로 정렬 */
+    .header-actions {
+        margin-left: auto;
+        margin-top: -32px; /* 로고 오른쪽에 딱 붙도록 조정 */
+    }
+
+    /* 메뉴(nav)는 두 번째 줄로 정렬됨 */
+    .nav {
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 4px;
+    }
+
+    /* share 버튼은 아래로 */
+    .header-actions #shareBtn {
+        margin-left: 10px;
+    }
+}

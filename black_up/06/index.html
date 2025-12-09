@@ -16,24 +16,30 @@
   <!-- ===================== 헤더 ===================== -->
   <header class="site-header">
     <div class="container header-inner">
-      <div class="logo">Chan's</div>
+      <div class="header-top-row"></div>
+        <div class="logo">Chan's</div>
 
-      <nav class="nav">
-        <a href="#hub">About Me</a>
-        <a href="#career">CAREER</a>
-        <a href="#audiences">Portfolio</a>
-        <a href="#photo-section">photo-section</a>
-      </nav>
+        <nav class="nav">
+          <a href="#hub">About Me</a>
+          <a href="#career">CAREER</a>
+          <a href="#audiences">Portfolio</a>
+          <a href="#photo-section">photo-section</a>
+        </nav>
 
-      <div class="header-actions">
-        <a href="https://blog.naver.com/black_sc" class="blog-link" target="_blank" rel="noopener">
-          <img src="./images/header_01_blog.png" alt="Chan's Blog">
-        </a>
-        <a href="https://www.instagram.com/my_chaaan/" class="blog-link" target="_blank" rel="noopener">
-          <img src="./images/header_01_instar.png" alt="Chan's instar">
-        </a>
+        <div class="header-actions">
+          <!-- BLOG ICON -->
+          <a href="https://blog.naver.com/black_sc" class="social-icon blog-icon" target="_blank">
+              <img src="./images/blog_gray.svg" class="icon-gray">
+              <img src="./images/blog_white.svg" class="icon-white">
+          </a>
 
-        <a href="#" class="btn btn-primary" id="shareBtn">share</a>
+          <!-- INSTAGRAM ICON -->
+          <a href="https://www.instagram.com/my_chaaan/" class="social-icon insta-icon" target="_blank">
+              <img src="./images/insta_gray.svg" class="icon-gray">
+              <img src="./images/insta_white.svg" class="icon-white">
+          </a>
+          <a href="#" class="btn btn-primary" id="shareBtn">share</a>
+        </div>
       </div>
     </div>
   </header>
@@ -174,6 +180,7 @@
             </p>
 
             <div class="cta-career-grid">
+
               <div class="career-item">
                 <p class="career-title">학력사항</p>
                 <p class="career-title_02">~2010</p>
@@ -214,13 +221,18 @@
                   <li>정보처리 기능사</li>
                 </ul>
               </div>
+
+              <!-- 원래 주석이었던 career-image-cell (그대로 유지) -->
+              <!--
               <div class="career-image-cell">
                 <img src="./images/03_01.png" class="career-image" />
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
+              -->
+
+            </div> <!-- cta-career-grid -->
+          </div> <!-- cta-primary-content -->
+        </div> <!-- container -->
+      </div> <!-- cta-primary-inner -->
     </section>
 
     <!-- ===================== PORTFOLIO ===================== -->
