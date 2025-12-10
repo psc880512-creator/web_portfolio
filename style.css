@@ -151,9 +151,11 @@ img {
 
 .hero-inner {
     display: flex;
-    align-items: center;
     justify-content: center;   /* 가운데 정렬 */
     gap: 40px;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
 }
 
 
@@ -840,6 +842,11 @@ img {
     overflow: hidden;
 }
 
+.pdf-fullscreen {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
 
 
 /* ===================== PHOTO 섹션 ===================== */
@@ -1117,3 +1124,201 @@ img {
         display: block;
     }
 }
+
+
+
+/* ============================================
+   💻 PC/태블릿 전용 Portfolio Modal (601px 이상)
+   - PC 레이아웃은 예전처럼
+     [왼쪽 큰 이미지] + [오른쪽 텍스트/메타/버튼] 구조
+============================================ */
+@media (min-width: 601px) {
+
+  /* 모달 전체를 2열 그리드로 */
+  .portfolio-modal-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    column-gap: 24px;
+    row-gap: 16px;
+    align-items: flex-start;
+  }
+
+  /* wrapper는 레이아웃에 개입하지 않게 */
+  .portfolio-modal-top {
+    display: contents;
+  }
+
+  /* 왼쪽: 큰 이미지 영역 */
+  .portfolio-modal-image {
+    grid-column: 1;
+    grid-row: 1 / 3;   /* 위·아래 두 줄 다 차지 */
+    height: 100%;
+  }
+
+  .portfolio-modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* 오른쪽 위: Tag / Title / Desc */
+  .portfolio-modal-text {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  /* 오른쪽 아래: meta + 버튼 */
+  .portfolio-modal-bottom {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .portfolio-modal-meta {
+    width: 100%;           /* PC에서는 카드 크기만큼 */
+  }
+
+  .portfolio-modal-footer {
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 0;
+  }
+  .cta-primary-subtitle{
+    width: 90%;
+  }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+/* ===============================
+   📱 모바일 전용 포트폴리오 카드 구조
+================================= */
+
+  /* 카드 전체를 세로 배치 */
+  .audience-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    padding: 20px;
+    gap: 16px;
+
+    width: 100%;
+  }
+
+  /* 이미지는 100%로 넓게 */
+  .audience-card_img img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  /* 텍스트는 중앙 정렬 + 글자 크기 줄이기 */
+  .audience-card_body h4 {
+    font-size: 14px;
+  }
+  .audience-card_body h3 {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+  .audience-card_body p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* 버튼도 가운데로 */
+  .audience-btn {
+    width: 100%;
+    max-width: 240px;
+    font-size: 16px;
+    padding: 12px 0;
+    margin-top: 10px;
+  }
+
+  /* 카드 간격 */
+  .audience-grid {
+    gap: 24px;
+  }
+
+/* ============================================
+   📱 모바일 전용 Portfolio Modal (0 ~ 600px)
+============================================ */
+  /* 전체 모달 내부를 세로 흐름으로 강제 */
+  .portfolio-modal-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* 이미지 크기 고정: 정사각형 */
+  .portfolio-modal-image {
+    width: 100%;
+    max-width: 180px;
+  }
+
+  .portfolio-modal-image img {
+    width: 100%;
+    aspect-ratio: 1 / 1;  /* 정사각형 */
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  /* 텍스트 묶음을 이미지 옆으로 배치 */
+  .portfolio-modal-top {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .portfolio-modal-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* meta(기획의도/시간/인원/모델) */
+  .portfolio-modal-bottom {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 8px;
+  }
+
+  .portfolio-modal-meta {
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+  }
+
+  .portfolio-modal-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+  }
+
+  .cta-primary-subtitle {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* 필요하면 유지 */
+  }
+
+    .cta-primary-subtitle {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* 필요하면 유지 */
+  }
+
+
+}
+

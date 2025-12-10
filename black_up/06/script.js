@@ -376,70 +376,54 @@ if (photoItems.length > 0) {
 }
 
 /* ================================
-   7. PDF 모달 기능 (새로 추가)
+   7. PDF 모달 기능
 ================================ */
-document.addEventListener("DOMContentLoaded", () => {
+const pdfModal = document.getElementById("pdfModal");
+const pdfViewer = document.getElementById("pdfViewer");
+const pdfCloseBtn = document.getElementById("pdfCloseBtn");
+const viewPortfolioBtn = document.getElementById("viewPortfolioBtn");
 
-    const pdfModal = document.getElementById("pdfModal");
-    const pdfViewer = document.getElementById("pdfViewer");
-    const pdfCloseBtn = document.getElementById("pdfCloseBtn");
-    const viewPortfolioBtn = document.getElementById("viewPortfolioBtn");
-
-    // 카드 클릭 → 기존 모달 열릴 때 PDF 경로 저장
-    document.querySelectorAll(".audience-card").forEach(card => {
-        card.addEventListener("click", () => {
-            const pdf = card.dataset.pdf;   // HTML에서 넣는 data-pdf 값
-            if (viewPortfolioBtn) {
-                viewPortfolioBtn.dataset.pdf = pdf;
-            }
-        });
-    });
-
-    // “포트폴리오 보기” 버튼 → PDF 모달 열기
-    if (viewPortfolioBtn) {
-        viewPortfolioBtn.addEventListener("click", () => {
-            const pdfPath = viewPortfolioBtn.dataset.pdf;
-
-            if (!pdfPath) {
-                alert("PDF 파일을 찾을 수 없습니다.");
-                return;
-            }
-
-            // PDF 뷰어 로딩
-            pdfViewer.src = pdfPath + "#toolbar=0&navpanes=0&scrollbar=0";
-
-            // PDF 모달 열기
-            pdfModal.classList.add("is-open");
-            document.body.style.overflow = "hidden";
-        });
-    }
-
-    // PDF 모달 닫기
-    if (pdfCloseBtn) {
-        pdfCloseBtn.addEventListener("click", () => {
-            pdfModal.classList.remove("is-open");
-            pdfViewer.src = "";
-            document.body.style.overflow = "";
-        });
-    }
-
-    // 오버레이 클릭 → 닫기
-    pdfModal.addEventListener("click", (e) => {
-        if (e.target === pdfModal) {
-            pdfModal.classList.remove("is-open");
-            pdfViewer.src = "";
-            document.body.style.overflow = "";
+// 카드 클릭 → PDF 경로 저장
+document.querySelectorAll(".audience-card").forEach(card => {
+    card.addEventListener("click", () => {
+        const pdf = card.dataset.pdf;
+        if (viewPortfolioBtn) {
+            viewPortfolioBtn.dataset.pdf = pdf;
         }
     });
-
-    // ESC → 닫기
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && pdfModal.classList.contains("is-open")) {
-            pdfModal.classList.remove("is-open");
-            pdfViewer.src = "";
-            document.body.style.overflow = "";
-        }
-    });
-
 });
 
+// “포트폴리오 보기” 버튼 → PDF 모달 열기
+if (viewPortfolioBtn) {
+    viewPortfolioBtn.addEventListener("click", () => {
+        const pdfPath = viewPortfolioBtn.dataset.pdf;
+
+        if (!pdfPath) {
+            alert("PDF 파일을 찾을 수 없습니다.");
+            return;
+        }
+
+        // PDF 띄우기
+        pdfViewer.src = pdfPath;
+        pdfModal.classList.add("is-open");
+        document.body.style.overflow = "hidden";
+    });
+}
+
+// PDF 닫기 버튼
+if (pdfCloseBtn) {
+    pdfCloseBtn.addEventListener("click", () => {
+        pdfModal.classList.remove("is-open");
+        pdfViewer.src = "";
+        document.body.style.overflow = "";
+    });
+}
+
+// 배경 클릭 → 닫기
+pdfModal.addEventListener("click", (e) => {
+    if (e.target === pdfModal) {
+        pdfModal.classList.remove("is-open");
+        pdfViewer.src = "";
+        document.body.style.overflow = "";
+    }
+});

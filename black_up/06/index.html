@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vision AI Platform</title>
-
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <!-- 메인 스타일 -->
   <link rel="stylesheet" href="style.css" />
   <!-- 메인 스크립트 -->
@@ -38,7 +38,7 @@
               <img src="./images/insta_gray.svg" class="icon-gray">
               <img src="./images/insta_white.svg" class="icon-white">
           </a>
-          <a href="#" class="btn btn-primary" id="shareBtn">share</a>
+          <!--<a href="#" class="btn btn-primary" id="shareBtn">share</a>-->
         </div>
       </div>
     </div>
@@ -49,27 +49,31 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="hero-text">
-          <p class="hero-label">Soonchan Park’s Portfolio</p>
-          <h1>강하지만 부드러운 <br> Chan</h1>
+          <p class="hero-label">Creative AI Product Portfolio</p>
+          <h1>
+            기술을 이해하고, 사람을 움직이는 <br>
+            AI · UX 기반 프로덕트 리더 
+            <br><span class="hero-name">Chan</span>
+          </h1>
           <p class="hero-subtitle">
-            웹·UXUI·서비스를 설계하고 <br>AI로 제품 전략 이끄는 프로덕트 PM 리더
+            AI 기술의 가능성을 제품 경험으로 연결하며 <br> 사용자 중심의 서비스 전략을 설계합니다.
           </p>
-
+          <!--
           <div class="hero-actions">
             <a href="#" class="btn btn-primary">Request a license</a>
             <a href="#" class="btn btn-secondary">Get started on GitHub</a>
           </div>
-
+          -->
           <p class="hero-note">
-            Trusted by teams in research, enterprises, and education worldwide.
+            AI·UX 기반 제품을 만드는 다양한 팀들과 협업해왔습니다.
           </p>
         </div>
-
+        <!--
         <div class="hero-media">
           <div class="hero-image">
             <img src="./images/01_01.png" alt="Chan profile / work preview">
           </div>
-        </div>
+        </div>  -->
       </div>
     </section>
 
@@ -173,7 +177,7 @@
         <div class="container">
           <div class="cta-primary-content">
             <p class="section-label">CAREER</p>
-            <h2 class="cta-primary-title">15년 디자인 & AI 경험 요약</h2>
+            <h2 class="cta-primary-title">15년 디자인 &<br> AI 경험 요약</h2>
             <p class="section-subtitle cta-primary-subtitle">
               UX·UI 디자인 경험과 AI 개발 경험을 조합하여<br>
               서비스 기획부터 모델 적용까지 수행합니다.
@@ -195,9 +199,9 @@
                 <p class="career-title">경력사항</p>
                 <p class="career-title_02">2012~2025</p>
                 <ul>
-                  <li>00000000 (3년)</li>
-                  <li>00000000 (1년)</li>
-                  <li>비와이리테일 (8년)</li>
+                  <li>피앤피 마케팅.주임 (1년)</li>
+                  <li>베라루띠.주임 (1년)</li>
+                  <li>비와이리테일.과장 (8년)</li>
                 </ul>
               </div>
 
@@ -223,7 +227,7 @@
               </div>
 
               <!-- 원래 주석이었던 career-image-cell (그대로 유지) -->
-              <!--
+               <!--
               <div class="career-image-cell">
                 <img src="./images/03_01.png" class="career-image" />
               </div>
@@ -268,7 +272,7 @@
 
           <!-- NLP -->
           <article class="audience-card"
-            data-pdf="/project/02_nlp.pdf"
+            data-pdf="project/02_nlp.pdf"
             data-purpose="LLM 기반 레시피 추천"
             data-duration="4주"
             data-members="4명"
@@ -287,7 +291,7 @@
 
           <!-- ETC -->
           <article class="audience-card"
-            data-pdf="/project/03_etc.pdf"
+            data-pdf="project/03_etc.pdf"
             data-purpose="AI 실험 기록"
             data-duration="지속 진행"
             data-members="개인"
@@ -334,14 +338,22 @@
         <button class="portfolio-modal-close">×</button>
 
         <div class="portfolio-modal-inner">
-          <div class="portfolio-modal-image">
-            <img id="modalImage">
+
+          <!-- 🔹 1행: 이미지 + 텍스트 묶음 -->
+          <div class="portfolio-modal-top">
+            <div class="portfolio-modal-image">
+              <img id="modalImage">
+            </div>
+
+            <div class="portfolio-modal-text">
+              <p id="modalTag"></p>
+              <h3 id="modalTitle"></h3>
+              <p id="modalDesc"></p>
+            </div>
           </div>
 
-          <div class="portfolio-modal-text">
-            <p id="modalTag"></p>
-            <h3 id="modalTitle"></h3>
-            <p id="modalDesc"></p>
+          <!-- 🔹 2행: meta + 버튼 묶음 -->
+          <div class="portfolio-modal-bottom">
 
             <ul class="portfolio-modal-meta">
               <li><span class="meta-label">기획의도</span><span id="modalPurpose"></span></li>
@@ -355,10 +367,13 @@
                 포트폴리오 보기
               </button>
             </div>
+
           </div>
+
         </div>
       </div>
     </div>
+
     <!-- ===================== PDF 모달 ===================== -->
     <div class="pdf-modal-overlay" id="pdfModal">
       <div class="pdf-modal">
@@ -369,11 +384,11 @@
           <h3 id="pdfTitle">포트폴리오 PDF</h3>
         </div>
 
-        <!-- PDF 뷰어 -->
         <iframe id="pdfViewer" src="" frameborder="0"></iframe>
 
       </div>
     </div>
+
 
 
     <!-- ===================== PHOTO 섹션 ===================== -->

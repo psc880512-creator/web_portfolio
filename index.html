@@ -272,7 +272,7 @@
 
           <!-- NLP -->
           <article class="audience-card"
-            data-pdf="/project/02_nlp.pdf"
+            data-pdf="project/02_nlp.pdf"
             data-purpose="LLM 기반 레시피 추천"
             data-duration="4주"
             data-members="4명"
@@ -291,7 +291,7 @@
 
           <!-- ETC -->
           <article class="audience-card"
-            data-pdf="/project/03_etc.pdf"
+            data-pdf="project/03_etc.pdf"
             data-purpose="AI 실험 기록"
             data-duration="지속 진행"
             data-members="개인"
@@ -338,14 +338,22 @@
         <button class="portfolio-modal-close">×</button>
 
         <div class="portfolio-modal-inner">
-          <div class="portfolio-modal-image">
-            <img id="modalImage">
+
+          <!-- 🔹 1행: 이미지 + 텍스트 묶음 -->
+          <div class="portfolio-modal-top">
+            <div class="portfolio-modal-image">
+              <img id="modalImage">
+            </div>
+
+            <div class="portfolio-modal-text">
+              <p id="modalTag"></p>
+              <h3 id="modalTitle"></h3>
+              <p id="modalDesc"></p>
+            </div>
           </div>
 
-          <div class="portfolio-modal-text">
-            <p id="modalTag"></p>
-            <h3 id="modalTitle"></h3>
-            <p id="modalDesc"></p>
+          <!-- 🔹 2행: meta + 버튼 묶음 -->
+          <div class="portfolio-modal-bottom">
 
             <ul class="portfolio-modal-meta">
               <li><span class="meta-label">기획의도</span><span id="modalPurpose"></span></li>
@@ -359,11 +367,14 @@
                 포트폴리오 보기
               </button>
             </div>
+
           </div>
+
         </div>
       </div>
     </div>
-    <!-- ===================== PDF 모달 ===================== -->
+
+    <!-- ===================== PDF 모달 (기존 모달 스타일 유지 버전) ===================== -->
     <div class="pdf-modal-overlay" id="pdfModal">
       <div class="pdf-modal">
 
@@ -373,12 +384,13 @@
           <h3 id="pdfTitle">포트폴리오 PDF</h3>
         </div>
 
-        <!-- PDF 뷰어 -->
-        <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+        <iframe id="pdfViewer" src="" class="pdf-modal-frame"></iframe>
 
       </div>
     </div>
 
+
+    
 
     <!-- ===================== PHOTO 섹션 ===================== -->
     <section class="photo-section" id="photo-section">
