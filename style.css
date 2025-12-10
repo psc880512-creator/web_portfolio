@@ -1162,6 +1162,8 @@ img {
     }
     .hero {
     background-image: url("images/hero_mobile.jpg");
+    height: 600px;
+    padding:80px 0 80px;
     }
 
     /* 로고 + 아이콘 한 줄 */
