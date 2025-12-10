@@ -255,7 +255,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const centerY = rect.top + rect.height / 1;
         const targetY = vh * 0;        // 화면 상단에서 25% 지점 기준
         const distance = Math.abs(centerY - targetY);
-        const maxDistance = vh * 3.1;     // 이 거리까지는 점점 변화
+        const maxDistance = vh * 0.8;     // 이 거리까지는 점점 변화
 
         // 0 ~ 1 사이 비율 (0 = 멀리, 1 = 딱 맞게)
         let progress = 1 - Math.min(distance / maxDistance, 1);

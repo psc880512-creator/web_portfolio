@@ -73,18 +73,6 @@ img {
     color: var(--text-main);
 }
 
-/* =====================작아졌다 커졌다 ==========*/
-.scale-section {
-    transform: scale(0.97);
-    opacity: 0.6;
-    transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.scale-section.is-center {
-    transform: scale(1);
-    opacity: 1;
-}
-
 /* ===================== 헤더 ===================== */
 .site-header {
     position: sticky;
@@ -159,12 +147,6 @@ img {
 /* ===================== Hero ===================== */
 .hero {
     padding: 180px 0 180px;
-    width: 100%;
-    height: 850px; /* 화면 전체 높이 꽉 채우기 */
-    background-image: url("images/hero_pc.jpg");
-    background-size: cover;     /* 이미지 비율 유지하며 꽉 채우기 */
-    background-position: center center; 
-    background-repeat: no-repeat;
 }
 
 .hero-inner {
@@ -262,29 +244,6 @@ img {
 }
 
 
-/* 초기값 */
-.zoom-target {
-    display: inline-block;
-    transform: scale(1);
-    transition: transform 0.35s ease;
-}
-
-.fade-target {
-    opacity: 1;
-    transition: opacity 0.35s ease;
-}
-
-/* 스크롤 시 트리거되는 클래스 */
-.hero-active .zoom-target {
-    transform: scale(1.8);
-}
-
-.hero-active .fade-target {
-    opacity: 0;
-}
-
-
-
 /* ===================== 로고 (기술 뱃지) ===================== */
 .logos {
     padding: 8px 0 32px;
@@ -317,18 +276,6 @@ img {
     border-radius: 999px;
     background: rgba(15, 23, 42, 0.9);
     border: 1px solid rgba(148, 163, 184, 0.4);
-
-        /* 🔥 추가되는 애니메이션 속성들 */
-    opacity: 0;
-    transform: scale(0.8);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-
-/* 등장할 때 적용되는 클래스 */
-.logo-pill.show {
-    opacity: 1;
-    transform: scale(1);
 }
 
 .logo-pill-icon {
@@ -850,7 +797,7 @@ img {
     width: 95vw;
     height: 95vh;
     max-width: 1100px;
-    max-height: 95vh;
+    max-height: 900px;
     background: #050816;
     border-radius: 18px;
     border: 1px solid rgba(255, 255, 255, 0.18);
@@ -889,12 +836,10 @@ img {
 #pdfViewer {
     flex: 1;
     width: 100%;
-    height: 100vh;
-    max-width: 100%;
+    height: 100%;
     border: none;
     background: #000;
     overflow: auto;
-    object-fit: contain;
 }
 
 .pdf-fullscreen {
@@ -903,20 +848,6 @@ img {
     border: none;
 }
 
-.pdf-modal-frame {
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    border: none;
-
-    /* PDF가 가로로 잘리지 않도록 강제 축소 */
-    max-width: 100%;
-    max-height: 100%;
-
-    overflow-y: auto;
-    overflow-x: hidden;
-    object-fit: contain;
-}
 
 
 /* ===================== PHOTO 섹션 ===================== */
@@ -1112,9 +1043,6 @@ img {
    📱 태블릿 (601px ~ 1024px)
 ============================================ */
 @media (min-width: 601px) and (max-width: 1024px) {
-    .hero {
-    background-image: url("images/hero_tablet.jpg");
-    }
 
     .header-inner {
         flex-direction: row;
@@ -1159,9 +1087,6 @@ img {
         flex-direction: column;
         align-items: stretch;
         gap: 10px;
-    }
-    .hero {
-    background-image: url("images/hero_mobile.jpg");
     }
 
     /* 로고 + 아이콘 한 줄 */
@@ -1210,15 +1135,17 @@ img {
         margin: 0;
     }
 
-    .pdfViewer {
-    width: 100vw;       
-    height: 100vh;    
-    max-width: 100%;    
-    object-fit: contain; 
+    /* iframe을 모바일에서 반드시 스크롤 가능하게
+    #pdfViewer {
+        width: 100%;
+        height: 100%;
+        overflow: scroll !important;
+        -webkit-overflow-scrolling: touch !important;
+        display: block;
     }
+         */
 
 }
-
 
 
 
@@ -1341,25 +1268,6 @@ img {
     gap: 24px;
   }
 
-
-/* 모바일에서는 scale-section 효과 비활성화 */
-@media (max-width: 768px) {
-    .scale-section {
-        transform: none !important;
-        transition: none !important;
-    }
-
-    .scale-section.is-center {
-        transform: none !important;
-    }
-
-        .scale-section {
-        transform: none !important;
-        opacity: 1 !important;
-    }
-}
-
-
 /* ============================================
    📱 모바일 전용 Portfolio Modal (0 ~ 600px)
 ============================================ */
@@ -1434,34 +1342,8 @@ img {
   }
 
 
-}
 
+  
 
-/* ============================
-   📱 모바일 PDF 보기 개선 (0~600px)
-=============================== */
-@media (max-width: 600px) {
-
-    /* PDF 뷰어 컨테이너 */
-    .pdf-modal {
-        width: 100vw !important;
-        height: 100vh !important;
-        border-radius: 0;
-    }
-
-    /* PDF iframe을 가로 100%에 강제 맞춤 */
-    #pdfViewer {
-        width: 100% !important;
-        height: 100%;
-        border: none;
-
-        /* 🔥 핵심: 모바일 가로폭에 맞춰 자동 축소 */
-        zoom: 0.48;              /* 모바일 화면에 맞게 축소 (기기 따라 조정 가능) */
-        transform-origin: top center;
-        
-        /* 세로 스크롤 가능 */
-        overflow-y: scroll !important;
-        -webkit-overflow-scrolling: touch;
-    }
 }
 

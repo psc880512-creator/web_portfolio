@@ -159,12 +159,6 @@ img {
 /* ===================== Hero ===================== */
 .hero {
     padding: 180px 0 180px;
-    width: 100%;
-    height: 850px; /* 화면 전체 높이 꽉 채우기 */
-    background-image: url("images/hero_pc.jpg");
-    background-size: cover;     /* 이미지 비율 유지하며 꽉 채우기 */
-    background-position: center center; 
-    background-repeat: no-repeat;
 }
 
 .hero-inner {
@@ -1112,9 +1106,6 @@ img {
    📱 태블릿 (601px ~ 1024px)
 ============================================ */
 @media (min-width: 601px) and (max-width: 1024px) {
-    .hero {
-    background-image: url("images/hero_tablet.jpg");
-    }
 
     .header-inner {
         flex-direction: row;
@@ -1159,9 +1150,6 @@ img {
         flex-direction: column;
         align-items: stretch;
         gap: 10px;
-    }
-    .hero {
-    background-image: url("images/hero_mobile.jpg");
     }
 
     /* 로고 + 아이콘 한 줄 */
@@ -1434,34 +1422,8 @@ img {
   }
 
 
-}
 
+  
 
-/* ============================
-   📱 모바일 PDF 보기 개선 (0~600px)
-=============================== */
-@media (max-width: 600px) {
-
-    /* PDF 뷰어 컨테이너 */
-    .pdf-modal {
-        width: 100vw !important;
-        height: 100vh !important;
-        border-radius: 0;
-    }
-
-    /* PDF iframe을 가로 100%에 강제 맞춤 */
-    #pdfViewer {
-        width: 100% !important;
-        height: 100%;
-        border: none;
-
-        /* 🔥 핵심: 모바일 가로폭에 맞춰 자동 축소 */
-        zoom: 0.48;              /* 모바일 화면에 맞게 축소 (기기 따라 조정 가능) */
-        transform-origin: top center;
-        
-        /* 세로 스크롤 가능 */
-        overflow-y: scroll !important;
-        -webkit-overflow-scrolling: touch;
-    }
 }
 
