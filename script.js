@@ -148,6 +148,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             pdfModal.classList.add("is-open");
             document.body.style.overflow = "hidden";
+
+            // 모바일/PC 모두 가로폭 꽉 채우기 + 세로 스크롤 활성화
+            pdfViewer.src = pdfPath + "#toolbar=0&navpanes=0&scrollbar=0&zoom=page-width";
         });
     }
 
